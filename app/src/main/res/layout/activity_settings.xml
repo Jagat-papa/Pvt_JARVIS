@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textColor="@color/accent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gemini API key (leave blank to use the key built into this app)"
+            android:textColor="@color/text_dim"/>
+        <EditText
+            android:id="@+id/apiKeyInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="override key (optional)"
+            android:textColorHint="@color/text_dim"
+            android:inputType="textPassword"
+            android:textColor="@color/text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wake word"
+            android:textColor="@color/text_dim"
+            android:layout_marginTop="12dp"/>
+        <EditText
+            android:id="@+id/wakeWordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact aliases"
+            android:textColor="@color/text_dim"
+            android:layout_marginTop="12dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Say the left word instead of the real contact name, e.g. mummy \u2192 the name saved in your phone."
+            android:textColor="@color/text_dim"
+            android:textSize="11sp"
+            android:layout_marginBottom="6dp"/>
+
+        <LinearLayout
+            android:id="@+id/aliasRowsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+
+        <TextView
+            android:id="@+id/addAliasButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_button"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_marginTop="6dp"
+            android:text="+ Add alias"
+            android:textColor="@color/accent"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text model"
+            android:textColor="@color/text_dim"
+            android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/textModelInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="gemini-3.6-flash"
+            android:textColorHint="@color/text_dim"
+            android:textColor="@color/text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Image model"
+            android:textColor="@color/text_dim"
+            android:layout_marginTop="12dp"/>
+        <EditText
+            android:id="@+id/imageModelInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="gemini-3.1-flash-image"
+            android:textColorHint="@color/text_dim"
+            android:textColor="@color/text"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Address me as ma'am (off = sir)"
+                android:textColor="@color/text"/>
+            <Switch
+                android:id="@+id/honorificSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voice"
+            android:textColor="@color/text_dim"
+            android:layout_marginTop="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shows every voice actually installed on this phone \u2014 locale codes indicate accent (en-IN, en-US, en-GB, en-AU, etc.) where your device provides them."
+            android:textColor="@color/text_dim"
+            android:textSize="11sp"
+            android:layout_marginBottom="6dp"/>
+        <Spinner
+            android:id="@+id/voiceSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_input"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/testVoiceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_button"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="\u25b6 Test voice"
+            android:textColor="@color/accent"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Save"/>
+
+        <Button
+            android:id="@+id/clearMemoryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Clear memory (facts + conversation log)"/>
+
+    </LinearLayout>
+</ScrollView>
